@@ -1,12 +1,11 @@
 import { Recipe } from './recipe.modal';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredients.modal';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 
 export class RecipeService {
-    recipeSelected = new EventEmitter<Recipe>();
 
     private recipes: Recipe[] = [
         new Recipe("Burger Cheese", "Super tasty burger!", "https://as1.ftcdn.net/jpg/01/98/69/96/500_F_198699667_BYTTe20s1ZVeKrlHKCx109Ee53IgxLEz.jpg",[
