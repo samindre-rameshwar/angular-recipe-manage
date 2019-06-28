@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
 
@@ -9,7 +10,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-	constructor(private _dataStorageService: DataStorageService,private _authService:AuthService) { }
+	constructor(private _dataStorageService: DataStorageService,private _authService:AuthService,private _router:Router) { }
 
 	ngOnInit() {
 	}
@@ -26,6 +27,7 @@ export class HeaderComponent implements OnInit {
 
 	onLogout(){
 		this._authService.logOut();
+		this._router.navigate(['/']);
 	}
 
 }
